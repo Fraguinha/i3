@@ -195,13 +195,11 @@ bar {
 # Start Applications
 exec --no-startup-id firefox
 exec --no-startup-id zoom
-exec --no-startup-id spotify
 
 # Make windows float
 for_window [class="KeePassXC"] floating enable
 
 # Assign windows to workspaces
 assign [class="firefox"] $ws1
-assign [class="jetbrains-idea-ce"] $ws2
 assign [class="zoom"] $ws8
 assign [class="Spotify"] $ws10
