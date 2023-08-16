@@ -194,13 +194,13 @@ bar {
 }
 
 # Start Applications
-exec --no-startup-id google-chrome
+exec --no-startup-id firefox
 exec --no-startup-id zoom
 
 # Make windows float
 for_window [class="KeePassXC"] floating enable
 
 # Assign windows to workspaces
-assign [class="google-chrome"] $ws1
+assign [class="firefox"] $ws1
 assign [class="zoom"] $ws8
 assign [class="Spotify"] $ws10
