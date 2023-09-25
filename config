@@ -17,9 +17,12 @@ exec --no-startup-id gnome-keyring-daemon --start --components=ssh,secrets,pgp,p
 # Start XDG autostart .desktop files using dex
 exec --no-startup-id dex --autostart --environment i3
 
-# Turn Laptop Monitor off if connected to HDMI
+# Turn laptop monitor off if connected to HDMI
 exec --no-startup-id xrandr | grep -q "HDMI-1 connected" && xrandr --output eDP-1 --off
 exec --no-startup-id xrandr | grep -q "DP-3-2 connected" && xrandr --output eDP-1 --off
+
+# Configure mouse speed
+exec --no-startup-id xinput set-prop "$(xinput list | grep Mouse | head -n 1 | cut -f2 | cut -d'=' -f2)" "Coordinate Transformation Matrix" 0.5 0 0 0 0.5 0 0 0 1
 
 # Start compositor
 exec --no-startup-id xcompmgr
